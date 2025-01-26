@@ -15,7 +15,11 @@ class _AppState extends State<App> {
   int counter = 0;
 
   void onClicked() {
-    counter = counter + 1;
+    // setState: State 클래스에서 데이터가 변경되었다고 알리는 함수
+    // 이 함수 없으면 build 메서드 다시 실행 X -> 상태 변화 생겨도 ui 변경 X
+    setState(() {
+      counter = counter + 1;
+    });
   }
 
   @override
